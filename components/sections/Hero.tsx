@@ -15,7 +15,7 @@ export default function Hero() {
                         </h1>
                     </div>
                     <div className="flex-1 flex items-end justify-end">
-                        <p className="font-roboto text-center text-xl sm:text-right md:text-2xl md:max-w-md lg:text-3xl lg:max-w-md xl:text-3xl xl:max-w-md text-muted-foreground max-w-lg ">
+                        <p className="font-roboto text-center text-md sm:text-right md:text-2xl md:max-w-md lg:text-3xl lg:max-w-md xl:text-3xl xl:max-w-md text-muted-foreground max-w-lg ">
                             StratosFi aims to elevate the customers online experience on your websites, improving your image and traffic
                         </p>
                     </div>
