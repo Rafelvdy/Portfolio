@@ -89,7 +89,7 @@ export function AnimatedDottedBorder({
   }, [dotSize, dotGap, strokeWidth]);
 
   const totalDots = dotPositions.length;
-  const delayStep = animationDuration / totalDots;
+  const delayStep = totalDots > 0 ? animationDuration / totalDots : 0;
   const offWindowPercent = 2;
 
   useEffect(() => {
@@ -122,7 +122,7 @@ export function AnimatedDottedBorder({
           }}
         >
           {dotPositions.map((dot) => {
-            const delay = (dot.index * delayStep) % animationDuration;
+            const delay = totalDots > 0 ? (dot.index * delayStep) % animationDuration : 0;
             return (
               <circle
                 key={dot.index}
