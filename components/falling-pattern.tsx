@@ -137,6 +137,9 @@ export function FallingPattern({
 						backgroundColor,
 						backgroundImage: generateBackgroundImage(),
 						backgroundSize: backgroundSizes,
+						willChange: 'background-position',
+						transform: 'translateZ(0)',
+						backfaceVisibility: 'hidden',
 					}}
 					variants={{
 						initial: {
