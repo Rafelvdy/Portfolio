@@ -1,4 +1,4 @@
-import { FallingPattern } from "@/components/falling-pattern";
+import { FallingPattern } from "@/components/ui/falling-pattern";
 
 export default function Hero() {
     return (
