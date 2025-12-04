@@ -4,7 +4,7 @@ import { AnimatedDottedBorder } from "@/components/ui/animated-dotted-border";
 export default function About() {
   return (
     <section className="w-full bg-background py-16 md:py-24 lg:py-32">
-      <AnimatedDottedBorder className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-neutral-600 rounded-lg p-10 hover:scale-105 transition-all duration-300">
+      <AnimatedDottedBorder className="container mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-6xl max-w-[90vw] text-neutral-600 rounded-lg p-10 hover:scale-105 transition-all duration-300">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center ">
           <div className="flex justify-center md:justify-start">
             <div className="relative w-48 h-48 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">
