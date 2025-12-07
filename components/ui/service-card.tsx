@@ -55,6 +55,24 @@ export function ServiceCard({ title, description, animationData, className }: Se
         );
     }
 
+    const glassCardStyle = `
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 70%);
+            animation: liquidMove 6s infinite linear;
+          }
+          @keyframes liquidMove {
+            0% { transform: rotate(0deg) translate(0, 0); }
+            50% { transform: rotate(180deg) translate(50px, 50px); }
+            100% { transform: rotate(360deg) translate(0, 0); }
+          }
+    `;
+
     return (
         <div
             className={cn("h-full flex-1", className)}
@@ -108,13 +126,21 @@ export function ServiceCard({ title, description, animationData, className }: Se
                         {title}
                     </h3>
                     <p className={cn(
-                        "text-sm md:text-base flex-1 transition-colors duration-300 mt-40",
+                        "text-sm md:text-base flex-1 transition-colors duration-300 mt-40 relative z-10",
                         isHovered ? "text-foreground" : "text-muted-foreground"
                     )}>
-                        {description}
+                        <span 
+                            className="absolute inset-0 -z-10 rounded-4xl backdrop-blur-md bg-background/40 border border-border/50"
+                            style={{
+                                borderRadius: '2rem',
+                                clipPath: 'inset(0 round 2rem)',
+                            }}
+                        />
+                        <span className="relative z-10">{description}</span>
                     </p>
                 </div>
             </AnimatedDottedBorder>
         </div>
     );
+    
 }
