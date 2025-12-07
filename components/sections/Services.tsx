@@ -2,6 +2,7 @@
 import { AnimatedDottedBorder } from "@/components/ui/animated-dotted-border";
 import { ServiceCard } from "@/components/ui/service-card";
 import WebDevelopmentAnimation from "@/public/images/WebDevelopment.json";
+import NetworkAnimation from "@/public/images/Network.json";
 
 export default function Services() {
     return (
@@ -12,14 +13,14 @@ export default function Services() {
                 </AnimatedDottedBorder>
                 <div className="w-full flex flex-row gap-4 items-stretch">
                     <ServiceCard
-                        title="Web Development"
+                        title="Web Development" 
                         description="We create custom websites tailored to your needs, whether that's a fast Next.js site for maxmimum performance, or a Wordpress setup that gives you full control to update content whenver you want. No templates, no compromises, just a profressional site that actually works for your business. Let's build something you'll be proud to show off."
                         animationData={WebDevelopmentAnimation}
                     />
                     <ServiceCard
                         title="Coming Soon"
                         description="More services will be added here soon."
-                        animationData={WebDevelopmentAnimation}
+                        animationData={NetworkAnimation}
                     />
                 </div>
             </div>

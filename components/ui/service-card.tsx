@@ -50,9 +50,7 @@ export function ServiceCard({ title, description, animationData, className }: Se
                             isHovered ? "opacity-100" : "opacity-30"
                         )}
                         style={{
-                            filter: isHovered 
-                                ? "blur(0px) hue-rotate(160deg) saturate(1.8) brightness(1.2)" 
-                                : "blur(4px) hue-rotate(160deg) saturate(1.8) brightness(1.2)",
+                            filter: isHovered ? "blur(0px)" : "blur(4px)",
                             transition: "filter 300ms ease-in-out",
                         }}
                     />
