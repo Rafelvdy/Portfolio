@@ -2,7 +2,6 @@
 
 import { AnimatedDottedBorder } from "@/components/ui/animated-dotted-border";
 import Image from "next/image";
-import { useState } from "react";
 
 interface PortfolioCardProps {
   projectTitle: string;
@@ -25,7 +24,6 @@ export default function PortfolioCard({
   techStack,
   category = "Web Development"
 }: PortfolioCardProps) {
-  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -68,8 +66,6 @@ export default function PortfolioCard({
                 </span>
               ))}
             </div>
-
-            {/* Quote (if provided) */}
             {projectQuote && (
               <div className="mt-2 pl-4 border-l-2 border-primary/50">
                 <p className="font-roboto text-sm italic text-foreground opacity-70">
@@ -82,15 +78,7 @@ export default function PortfolioCard({
                 )}
               </div>
             )}
-
-            {/* Action Buttons */}
             <div className="flex gap-3 mt-auto pt-4">
-              {/* <button
-                onClick={() => setShowModal(true)}
-                className="flex-1 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors"
-              >
-                Preview Site
-              </button> */}
               <a
                 href={projectLink}
                 target="_blank"
@@ -103,14 +91,6 @@ export default function PortfolioCard({
           </div>
         </div>
       </AnimatedDottedBorder>
-
-      {/* Modal for full-screen preview
-      <PortfolioModal 
-        isOpen={showModal}
-        onClose={() => setShowModal(false)}
-        projectUrl={projectLink}
-        projectTitle={projectTitle}
-      /> */}
     </>
   );
 }
