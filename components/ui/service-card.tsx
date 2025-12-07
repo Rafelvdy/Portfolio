@@ -130,8 +130,17 @@ export function ServiceCard({ title, description, animationData, className }: Se
                         isHovered ? "text-foreground" : "text-muted-foreground"
                     )}>
                         <span 
-                            className="absolute inset-0 -z-10 rounded-4xl backdrop-blur-md bg-background/40 border border-border/50"
+                            className="absolute inset-0 -z-10 rounded-4xl backdrop-blur-xl bg-gradient-to-br from-background/10 via-background/5 to-background/10 border border-border/20"
                             style={{
+                                borderRadius: '2rem',
+                                clipPath: 'inset(0 round 2rem)',
+                                boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 16px rgba(0, 0, 0, 0.1)',
+                            }}
+                        />
+                        <span 
+                            className="absolute inset-0 -z-10 rounded-4xl opacity-30 pointer-events-none"
+                            style={{
+                                background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%)',
                                 borderRadius: '2rem',
                                 clipPath: 'inset(0 round 2rem)',
                             }}
