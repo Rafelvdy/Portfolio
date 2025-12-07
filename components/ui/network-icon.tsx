@@ -2,9 +2,9 @@
 
 import { useEffect, useRef } from "react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import animationData from "@/public/images/WebDevelopment.json";
+import animationData from "@/public/images/Network.json";
 
-interface WebDevelopmentIconProps {
+interface NetworkIconProps {
     height?: number;
     width?: number;
     loop?: boolean;
@@ -12,13 +12,13 @@ interface WebDevelopmentIconProps {
     autoplay?: boolean;
 }
 
-export default function WebDevelopmentIcon({ 
+export default function NetworkIcon({ 
     height, 
     width, 
     loop = true, 
     className,
     autoplay = true 
-}: WebDevelopmentIconProps) {
+}: NetworkIconProps) {
     const lottieRef = useRef<LottieRefCurrentProps>(null);
 
     useEffect(() => {

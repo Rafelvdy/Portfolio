@@ -1,0 +1,47 @@
+"use client";
+import { AnimatedDottedBorder } from "@/components/ui/animated-dotted-border";
+import { ServiceCard } from "@/components/ui/service-card";
+import { useState, useEffect } from "react";
+
+export default function Services() {
+    const [webDevAnimation, setWebDevAnimation] = useState<object | null>(null);
+    const [networkAnimation, setNetworkAnimation] = useState<object | null>(null);
+
+    
+    useEffect(() => {
+        Promise.all([
+            fetch("/images/WebDevelopment.json").then(res => res.json()),
+            fetch("/images/Network.json").then(res => res.json())
+        ]).then(([webDev, network]) => {
+            setWebDevAnimation(webDev);
+            setNetworkAnimation(network);
+        }).catch((error) => {
+            console.error("Error loading Lottie animations:", error);
+        });
+    }, []);
+    return (
+        <section className="w-full bg-background py-16 px-10 md:py-24 lg:py-32 flex flex-col items-center justify-start">
+            <div className="lg:w-7xl w-full flex flex-col items-center justify-start gap-6">
+                <AnimatedDottedBorder className="w-full p-10">
+                    <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold">What can we offer for you?</h2>
+                </AnimatedDottedBorder>
+                <div className="w-full flex flex-col md:flex-row gap-4 items-stretch">
+                    {webDevAnimation && (
+                        <ServiceCard
+                            title="Web Development" 
+                            description="We create custom websites tailored to your needs, whether that's a fast Next.js site for maxmimum performance, or a Wordpress setup that gives you full control to update content whenver you want. No templates, no compromises, just a profressional site that actually works for your business. Let's build something you'll be proud to show off."
+                            animationData={webDevAnimation}
+                        />
+                    )}
+                    {networkAnimation && (
+                        <ServiceCard
+                            title="Hosting"
+                            description="We handle the technical stuff so you don't have to. Secure hosting for both Next.js and WordPress sites with proper security measures in place, regular backups on request for peace of mind, and help getting your domain and custom email addresses setup. Your site stays fast, safe and online while you focus on running your business."
+                            animationData={networkAnimation}
+                        />
+                    )}
+                </div>
+            </div>
+        </section>
+    )
+}
