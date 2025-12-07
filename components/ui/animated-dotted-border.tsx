@@ -31,7 +31,7 @@ export function AnimatedDottedBorder({
 }: AnimatedDottedBorderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [dotPositions, setDotPositions] = useState<DotPosition[]>([]);
-  const [isHovered, setIsHovered] = useState(false);  // Add hover state
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const updateDotPositions = () => {
@@ -123,9 +123,9 @@ export function AnimatedDottedBorder({
     
     const stretchAmount = dotGap + dotSize;
     if (edge === 'top' || edge === 'bottom') {
-      return { rx: stretchAmount / 2, ry: dotSize / 2 }; // Horizontal stretch
+      return { rx: stretchAmount / 2, ry: dotSize / 2 };
     } else {
-      return { rx: dotSize / 2, ry: stretchAmount / 2 }; // Vertical stretch
+      return { rx: dotSize / 2, ry: stretchAmount / 2 };
     }
   };
 

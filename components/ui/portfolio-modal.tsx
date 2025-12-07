@@ -18,7 +18,7 @@ export function PortfolioModal({ isOpen, onClose, projectUrl, projectTitle }: Po
     
     if (isOpen) {
       document.addEventListener('keydown', handleEsc);
-      document.body.style.overflow = 'hidden'; // Prevent background scroll
+      document.body.style.overflow = 'hidden';
     }
     
     return () => {
@@ -38,7 +38,6 @@ export function PortfolioModal({ isOpen, onClose, projectUrl, projectTitle }: Po
         className="relative w-[95vw] h-[90vh] bg-card rounded-lg shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-border bg-card">
           <div className="flex items-center gap-3">
             <h3 className="font-inter text-lg font-semibold text-foreground">
@@ -65,12 +64,11 @@ export function PortfolioModal({ isOpen, onClose, projectUrl, projectTitle }: Po
           </button>
         </div>
 
-        {/* iFrame */}
         <iframe
           src={projectUrl}
           className="w-full h-[calc(100%-4rem)] border-0"
           title={`Preview of ${projectTitle}`}
-          sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+          // sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
         />
       </div>
     </div>

@@ -1,5 +1,4 @@
 import PortfolioCard from "@/components/ui/portfolio-card";
-import WebDevelopmentIcon from "@/components/ui/web-development-icon";
 
 export default function Portfolio() {
 
@@ -14,22 +13,11 @@ export default function Portfolio() {
           techStack: ["Next.js", "React Framework", "GSAP"],
           category: "Web Development"
         },
-        {
-            projectTitle: "Dunstan Detailing",
-            projectDescription: "Custom built and hosted website for a local car detailing business featuring online booking and service packages.",
-            projectQuote: "StratosFi transformed our online presence completely. Bookings increased by 200%!",
-            projectQuoteAuthor: "Luke Dunstan, Owner",
-            projectLink: "https://dunstandetailing.com",
-            projectImage: "/customer-logos/dunstan-detailing.jpg",
-            techStack: ["Next.js", "React Framework", "GSAP"],
-            category: "Web Development"
-          },
       ];
 
     return (
         <section className="w-full bg-background py-16 md:py-24 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
               Portfolio
@@ -39,8 +27,7 @@ export default function Portfolio() {
             </p>
           </div>
   
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto justify-items-center">
             {projects.map((project, index) => (
               <PortfolioCard key={index} {...project} />
             ))}
