@@ -126,7 +126,7 @@ export function ServiceCard({ title, description, animationData, className }: Se
                         {title}
                     </h3>
                     <p className={cn(
-                        "text-sm md:text-base flex-1 transition-colors duration-300 mt-40 relative z-10",
+                        "text-sm md:text-base flex-1 transition-colors duration-300 mt-40 relative z-10 py-3 px-4",
                         isHovered ? "text-foreground" : "text-muted-foreground"
                     )}>
                         <span 

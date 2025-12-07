@@ -35,8 +35,8 @@ export default function Services() {
                     )}
                     {networkAnimation && (
                         <ServiceCard
-                            title="Coming Soon"
-                            description="More services will be added here soon."
+                            title="Hosting"
+                            description="We handle the technical stuff so you don't have to. Secure hosting for both Next.js and WordPress sites with proper security measures in place, regular backups on request for peace of mind, and help getting your domain and custom email addresses setup. Your site stays fast, safe and online while you focus on running your business."
                             animationData={networkAnimation}
                         />
                     )}
