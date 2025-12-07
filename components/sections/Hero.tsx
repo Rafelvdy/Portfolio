@@ -1,11 +1,8 @@
-import { FallingPattern } from "@/components/falling-pattern";
+import { FallingPattern } from "@/components/ui/falling-pattern";
 
 export default function Hero() {
     return (
         <section className="relative h-screen w-screen flex items-center justify-center bg-background">
-            <button className="absolute top-8 left-1/2 -translate-x-1/2 z-20 px-6 py-2 rounded-full bg-card border border-border text-foreground hover:bg-accent transition-colors">
-                Contact
-            </button>
             <div className="relative h-[80vh] w-[80vw] sm:w-[75vw] sm:max-w-7xl max-w-6xl mt-20">
                 <FallingPattern className="h-full w-full rounded-lg mask-[radial-gradient(ellipse_at_center,transparent,var(--background))]" />
                 <div className="absolute inset-0 z-10 p-12 flex flex-col justify-between">
