@@ -1,0 +1,28 @@
+"use client";
+import { AnimatedDottedBorder } from "@/components/ui/animated-dotted-border";
+import { ServiceCard } from "@/components/ui/service-card";
+import WebDevelopmentAnimation from "@/public/images/WebDevelopment.json";
+
+export default function Services() {
+    return (
+        <section className="w-full bg-background py-16 md:py-24 lg:py-32 flex flex-col items-center justify-start">
+            <div className="lg:w-7xl w-full flex flex-col items-center justify-start gap-6">
+                <AnimatedDottedBorder className="w-full p-10">
+                    <h2 className="text-center">What can we offer for you?</h2>
+                </AnimatedDottedBorder>
+                <div className="w-full flex flex-row gap-4 items-stretch">
+                    <ServiceCard
+                        title="Web Development"
+                        description="We create custom websites tailored to your needs, whether that's a fast Next.js site for maxmimum performance, or a Wordpress setup that gives you full control to update content whenver you want. No templates, no compromises, just a profressional site that actually works for your business. Let's build something you'll be proud to show off."
+                        animationData={WebDevelopmentAnimation}
+                    />
+                    <ServiceCard
+                        title="Coming Soon"
+                        description="More services will be added here soon."
+                        animationData={WebDevelopmentAnimation}
+                    />
+                </div>
+            </div>
+        </section>
+    )
+}
