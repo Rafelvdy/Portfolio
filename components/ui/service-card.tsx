@@ -8,23 +8,52 @@ import { cn } from "@/lib/utils";
 interface ServiceCardProps {
     title: string;
     description: string;
-    animationData: object;
+    animationData: object | null;
     className?: string;
+}
+
+function isValidLottieData(data: any): boolean {
+    return (
+        data &&
+        typeof data === 'object' &&
+        'v' in data &&
+        'fr' in data &&
+        'layers' in data &&
+        Array.isArray(data.layers)
+    );
 }
 
 export function ServiceCard({ title, description, animationData, className }: ServiceCardProps) {
     const [isHovered, setIsHovered] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const lottieRef = useRef<LottieRefCurrentProps>(null);
 
     useEffect(() => {
-        if (lottieRef.current) {
+        setIsMounted(true);
+    }, []);
+
+    useEffect(() => {
+        if (lottieRef.current && isMounted && animationData && isValidLottieData(animationData)) {
             if (isHovered) {
                 lottieRef.current.play();
             } else {
                 lottieRef.current.pause();
             }
         }
-    }, [isHovered]);
+    }, [isHovered, isMounted, animationData]);
+
+    if (!animationData || !isValidLottieData(animationData)) {
+        return (
+            <div className={cn("h-full flex-1", className)}>
+                <AnimatedDottedBorder className="h-full relative overflow-hidden">
+                    <div className="relative z-10 p-10 flex flex-col h-full">
+                        <h3 className="text-xl md:text-2xl font-semibold mb-4 text-muted-foreground">{title}</h3>
+                        <p className="text-sm md:text-base flex-1 text-muted-foreground mt-40">{description}</p>
+                    </div>
+                </AnimatedDottedBorder>
+            </div>
+        );
+    }
 
     return (
         <div
@@ -40,20 +69,22 @@ export function ServiceCard({ title, description, animationData, className }: Se
                 hoverExpand={true}
             >
                 <div className="absolute inset-0 z-0 pointer-events-none">
-                    <Lottie
-                        lottieRef={lottieRef}
-                        animationData={animationData}
-                        loop={true}
-                        autoplay={false}
-                        className={cn(
-                            "w-full h-full transition-opacity duration-300",
-                            isHovered ? "opacity-100" : "opacity-30"
-                        )}
-                        style={{
-                            filter: isHovered ? "blur(0px)" : "blur(4px)",
-                            transition: "filter 300ms ease-in-out",
-                        }}
-                    />
+                    {isValidLottieData(animationData) && (
+                        <Lottie
+                            lottieRef={lottieRef}
+                            animationData={animationData}
+                            loop={true}
+                            autoplay={false}
+                            className={cn(
+                                "w-full h-full transition-opacity duration-300",
+                                isHovered ? "opacity-100" : "opacity-30"
+                            )}
+                            style={{
+                                filter: isHovered ? "blur(0px)" : "blur(4px)",
+                                transition: "filter 300ms ease-in-out",
+                            }}
+                        />
+                    )}
                 </div>
                 <div 
                     className="absolute inset-0 pointer-events-none"

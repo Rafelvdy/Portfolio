@@ -1,4 +1,9 @@
-import { FallingPattern } from "@/components/ui/falling-pattern";
+"use client";
+import dynamic from "next/dynamic";
+
+const FallingPattern = dynamic(() => import("@/components/ui/falling-pattern").then(mod => ({ default: mod.FallingPattern })), {
+    ssr: false,
+});
 
 export default function Hero() {
     return (
