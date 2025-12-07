@@ -23,7 +23,7 @@ export default function Services() {
         <section className="w-full bg-background py-16 px-10 md:py-24 lg:py-32 flex flex-col items-center justify-start">
             <div className="lg:w-7xl w-full flex flex-col items-center justify-start gap-6">
                 <AnimatedDottedBorder className="w-full p-10">
-                    <h2 className="text-center">What can we offer for you?</h2>
+                    <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold">What can we offer for you?</h2>
                 </AnimatedDottedBorder>
                 <div className="w-full flex flex-col md:flex-row gap-4 items-stretch">
                     {webDevAnimation && (
