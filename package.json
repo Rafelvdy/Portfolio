@@ -15,8 +15,10 @@
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.555.0",
     "next": "^16.0.7",
+    "qrcode": "^1.5.4",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
+    "speakeasy": "^2.0.0",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {

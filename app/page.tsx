@@ -10,10 +10,6 @@ const Portfolio = dynamic(() => import("@/components/sections/Portfolio"), {
     loading: () => <div className="w-full h-96 flex items-center justify-center">Loading...</div>,
 });
 
-const About = dynamic(() => import("@/components/sections/About"), {
-    loading: () => <div className="w-full h-96 flex items-center justify-center">Loading...</div>,
-});
-
 export default function Home() {
   return (
     <>
@@ -21,7 +17,6 @@ export default function Home() {
       <Hero />
       <Services />
       <Portfolio />
-      <About />
     </>
   );
 }

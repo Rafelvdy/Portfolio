@@ -1,15 +1,18 @@
 import Navbar from "@/components/ui/navbar";
+import dynamic from "next/dynamic";
+
+const About = dynamic(() => import("@/components/sections/About"), {
+    loading: () => <div className="w-full h-96 flex items-center justify-center">Loading...</div>,
+});
 
 
 
-export default function About() {
+export default function AboutPage() {
     return (
         <>
             <Navbar />
             <section className="w-full bg-background py-16 md:py-24 lg:py-32">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">About</h1>
-                </div>
+                <About />
             </section>
         </>
     )
